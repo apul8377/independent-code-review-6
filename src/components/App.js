@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "../css/App.css";
 import NewKegControl from "./AddKeg.js";
+import KegList from "./KegList.js";
 function App() {
   return (
     <React.Fragment>

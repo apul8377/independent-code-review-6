@@ -1,6 +1,6 @@
 import React from "react";
-import KegDetails from "./KegDetails";
-
+import Keg from "./Keg";
+import { v4 } from "uuid";
 const masterKegList = [];
 
 function KegList() {
