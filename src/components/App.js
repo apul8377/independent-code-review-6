@@ -7,7 +7,6 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <KegList />
       <NewKegControl />
     </React.Fragment>
   );
