@@ -12,3 +12,7 @@
 - there should be a button to decrease keg amount by 1 pint
 - should alert user when keg is running low
 - should alert user when keg is empty
+
+## Dom Diagram
+
+![Dom-Diagram](domDiagram.jpg)
