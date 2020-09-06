@@ -1,6 +1,6 @@
 import React from "react";
 
-function Ticket() {
+function Keg() {
   return (
     <React.Fragment>
       <h3>{name}</h3>
@@ -13,4 +13,4 @@ function Ticket() {
   );
 }
 
-export default Ticket;
+export default Keg;

@@ -2,6 +2,12 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-function App() {}
+function App() {
+  return (
+    <React.Fragment>
+      <KegList />
+    </React.Fragment>
+  );
+}
 
 export default App;
