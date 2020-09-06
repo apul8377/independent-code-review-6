@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-function Keg() {
+
+function Keg(props) {
   return (
     <React.Fragment>
       <h3>{props.name}</h3>
