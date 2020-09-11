@@ -1,7 +1,9 @@
 import React from "react";
 import NewKegForm from "./AddKeg.js";
 import KegList from "./KegList.js";
+import PropTypes from "prop-types";
 import KegDetail from "./KegDetails";
+
 class KegControl extends React.Component {
   constructor(props) {
     super(props);
@@ -32,14 +34,12 @@ class KegControl extends React.Component {
     const newKegList = this.state.kegList.concat(newKeg);
     this.setState({
       formVisibleOnPage: false,
-      selectedKeg: null,
-      editing: false,
       kegList: newKegList,
     });
   };
 
   handleChangingSelectedKeg = (id) => {
-    const selectedKeg = this.state.kegList.filter((keg) => keg.id === id)[0];
+    const selectedKeg = this.props.kegList[id];
     this.setState({ selectedKeg: selectedKeg });
   };
 
@@ -55,9 +55,7 @@ class KegControl extends React.Component {
       currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} />;
       buttonText = "Return to List";
     } else if (this.state.formVisibleOnPage) {
-      // This conditional needs to be updated to "else if."
       currentlyVisibleState = <NewKegForm onNewKeg={this.handleAddKeg} />;
-      buttonText = "Return to Ticket List";
     } else {
       currentlyVisibleState = (
         <KegList
@@ -65,8 +63,6 @@ class KegControl extends React.Component {
           onKegSelection={this.handleChangingSelectedKeg}
         />
       );
-      // Because a user will actually be clicking on the ticket in the Ticket component, we will need to pass our new handleChangingSelectedTicket method as a prop.
-      buttonText = "Add Ticket";
     }
     return (
       <React.Fragment>
@@ -76,5 +72,9 @@ class KegControl extends React.Component {
     );
   }
 }
+
+KegControl.propTypes = {
+  kegList: PropTypes.array,
+};
 
 export default KegControl;
