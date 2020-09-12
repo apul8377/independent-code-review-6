@@ -69,7 +69,7 @@ class KegControl extends React.Component {
   };
 
   handleSellPintClick = (selectedKeg) => {
-    const amount = this.state.selectedKeg.pints;
+    let amount = this.state.selectedKeg.pints;
     let newAmount;
     newAmount = parseInt(amount);
     if (newAmount > 0) {
@@ -77,7 +77,7 @@ class KegControl extends React.Component {
     } else {
       alert("Keg is empty, please replace!");
     }
-
+    this.state.selectedKeg.pints = newAmount;
     console.log(newAmount);
     this.setState({
       editing: false,
