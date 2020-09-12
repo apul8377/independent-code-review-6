@@ -1,31 +1,33 @@
 import React from "react";
-import { v4 } from "uuid";
+import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
-import ReusableForm from "./ReusableForm.js";
 
-function NewKegForm(props) {
-  function handleNewKegSubmission(event) {
+function EditNewKeg(props) {
+  const { keg } = props;
+
+  function handleEditKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewKeg({
+    props.onEditKeg({
       name: event.target.name.value,
       price: event.target.price.value,
       abv: event.target.abv.value,
       description: event.target.description.value,
-      id: v4(),
+      id: keg.id,
       pints: event.target.pints.value,
     });
   }
   return (
     <React.Fragment>
       <ReusableForm
-        formSubmissionHandler={handleNewKegSubmission}
-        buttonText="Add!"
+        formSubmissionHandler={handleEditKegFormSubmission}
+        buttonText="Update Keg"
       />
     </React.Fragment>
   );
 }
 
-NewKegForm.propTypes = {
-  onNewKeg: PropTypes.func,
+EditNewKeg.propTypes = {
+  onEditKeg: PropTypes.func,
 };
-export default NewKegForm;
+
+export default EditNewKeg;
