@@ -88,7 +88,13 @@ class KegControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-
+    const Stylization = {
+      backgroundColor: "#ffcc66",
+      position: "fixed",
+      left: "40%",
+      textAlign: "center",
+      width: "20%",
+    };
     if (this.state.editing) {
       currentlyVisibleState = (
         <EditNewKeg
@@ -121,8 +127,11 @@ class KegControl extends React.Component {
     }
     return (
       <React.Fragment>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <div style={Stylization}>
+          {currentlyVisibleState}
+
+          <button onClick={this.handleClick}>{buttonText}</button>
+        </div>
       </React.Fragment>
     );
   }
