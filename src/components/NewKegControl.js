@@ -81,7 +81,7 @@ class KegControl extends React.Component {
     console.log(newAmount);
     this.setState({
       editing: false,
-      selectedKeg: selectedKeg,
+      selectedKeg: null,
     });
   };
 
