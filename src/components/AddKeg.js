@@ -12,7 +12,6 @@ function NewKegForm(props) {
       abv: event.target.abv.value,
       description: event.target.description.value,
       id: v4(),
-      key: v4(),
     });
   }
   return (
